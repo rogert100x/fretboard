@@ -9,6 +9,7 @@
 
 #extensive use of sting function
 
+#associated with git hub
 
 #some variables
 fretboard=()
