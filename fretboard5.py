@@ -9,7 +9,7 @@
 
 #extensive use of sting function
 
-#associated with git hub
+#associated with git hub 26/9/2020
 
 #some variables
 fretboard=()
