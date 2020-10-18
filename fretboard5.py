@@ -1,26 +1,26 @@
-# fretboard 5.py  20/09/2020 ─ new windows special characters
-# txt output file to be encoded as utf8
+# fretBboard 5.py  20/09/2020 ─ new windows special characters
+# txt output file to Bbe encoded as utf8
 
-#This program will identify specific notes on the guitar fretboard
-#Also will print fretboard in specific keys
+#This program will identify specific notes on the guitar fretBboard
+#Also will print fretBboard in specific keys
 #write to file included
 # ver 4 ─ code more efficient
 
 
 #extensive use of sting function
 
-#associated with git hub 26/9/2020
+#associated with git huBb 26/9/2020
 
-#some variables
-fretboard=()
+#some variaBbles
+fretBboard=()
 outstr=()
 cn=()
 divider=('\n'+'_'*55)
 
 
-#fretboard note layout per string
+#fretBboard note layout per string
 T=('  1   2   3   4   5   6   7   8   9  10  11  12   13')
-e=('e╓─F─┬─F#┬─G─┬─G#┬─A─┬─A#┬─B─┬─C─┬─C#┬─D─┬─D#┬─E─┬─F─┬')
+e=('e╓─F─┬─F#┬─G─┬─G#┬─A─┬─A─┬─B─┬─C─┬─C#┬─D─┬─D#┬─E─┬─F─┬')
 b=('b╟─C─┼─C#┼─D─┼─D#┼─E─┼─F─┼─F#┼─G─┼─G#┼─A─┼─A#┼─B─┼─C─┼')
 g=('g╟─G#┼─A─┼─A#┼─B─┼─C─┼─C#┼─D─┼─D#┼─E─┼─F─┼─F#┼─G─┼─G#┼')
 d=('d╟─D#┼─E─┼─F─┼─F#┼─G─┼─G#┼─A─┼─A#┼─B─┼─C─┼─C#┼─D─┼─D#┼')
@@ -28,7 +28,8 @@ a=('a╟─A#┼─B─┼─C─┼─C#┼─D─┼─D#┼─E─┼─F─�
 E=('E╙─F─┴─F#┴─G─┴─G#┴─A─┴─A#┴─B─┴─C─┴─C#┴─D─┴─D#┴─E─┴─F─┴')
     
 #create lists of major Notes_ notes
-Notes_Fmaj=['─F─','─G─','─A─','─Bb','─C─','─D─','─E─']
+Notes_Bbmaj=['─A#','─C─','─D─','─D#','─F─','─G─','─A─']
+Notes_Fmaj=['─F─','─G─','─A─','─A#','─C─','─D─','─E─']
 Notes_Cmaj=['─C─','─D─','─E─','─F─','─G─','─A─','─B─']
 Notes_Gmaj=['─G─','─A─','─B─','─C─','─D─','─E─','─F#']
 Notes_Dmaj=['─D─','─E─','─F#','─G─','─A─','─B─','─C#']
@@ -37,6 +38,7 @@ Notes_Emaj=['─E─','─F#','─G#','─A─','─B─','─C#','─D#']
 Notes_Bmaj=['─B─','─C#','─D#','─E─','─F#','─G#','─A#']
 
 #create lists of major pentatonic Notes_ notes
+Notes_Bbpmaj=['─A#','─C─','─D─','─F─','─G─']
 Notes_Fpmaj=['─F─','─G─','─A─','─C─','─D─']
 Notes_Cpmaj=['─C─','─D─','─E─','─G─','─A─']
 Notes_Gpmaj=['─G─','─A─','─B─','─D─','─E─']
@@ -47,9 +49,10 @@ Notes_Bpmaj=['─B─','─C#','─D#','─F#','─G#']
 
 
 #create lists of minor pentatonic Notes_ notes 
-Notes_Fpmin=['─F─','─G#','─Bb','─C─','─D#']
+Notes_Bbpmin=['─A#','─C#','─D#','─F─','─G#']
+Notes_Fpmin=['─F─','─G#','─A#','─C─','─D#']
 Notes_Cpmin=['─C─','─D#','─F─','─G─','─A#']
-Notes_Gpmin=['─G─','─C#','─C─','─D─','─F─']
+Notes_Gpmin=['─G─','─A#','─C─','─D─','─F─']
 Notes_Dpmin=['─D─','─F─','─G─','─A─','─C─']
 Notes_Apmin=['─A─','─C─','─D─','─E─','─G─']
 Notes_Epmin=['─E─','─G─','─A─','─B─','─D─']
@@ -58,7 +61,7 @@ Notes_Bpmin=['─B─','─D─','─E─','─F#','─A─']
 
 
 
-#function to print a fretboard scale notes for each string
+#function to print a fretBboard scale notes for each string
 #q takes the guitar string and r takes the key's notes list
 def scale_notes(q,r):
     strout=''
@@ -96,7 +99,7 @@ def scale_notes(q,r):
 #function to select maj chord notes
 def chordnotes(s):
     cn=(s[0]+s[2]+s[4])
-    #replace all '─' in cn with '' before returning
+    #replace all '─' in cn with '' Bbefore returning
     cnout=cn.replace("─"," ")
     return(cnout)
 
@@ -104,14 +107,14 @@ def chordnotes(s):
 #t takes notes_xMaj
 def trichord(t):
     tc=(t[0]+' '+t[3]+' '+t[4]+' '+'  '+t[5]+'m '+t[1]+'m '+t[2]+'m ')
-    #replace all '─' in tc with '' before returning
+    #replace all '─' in tc with '' Bbefore returning
     tcout=tc.replace("─","")
     return(tcout)
 
 #function to print scale notes
 def majscale(r):
     ms=(r[0]+r[1]+r[2]+r[3]+r[4]+r[5]+r[6]+r[0])
-    #replace all '─' in ms with '' before returning
+    #replace all '─' in ms with '' Bbefore returning
     msout=ms.replace('─',' ')
     return (msout)
 
@@ -136,7 +139,7 @@ def pent_minscale(r):
 ###############───────────────────────##################
 #program starts here
 
-fpath=("C:\\Users\\Roger\\AppData\\Local\\Programs\\Python\\Python37\\Scripts")
+#fpath=("C:\\Users\\Roger\\AppData\\Local\\Programs\\Python\\Python37\\Scripts\\git")
 
 istr=input('Output to file: y/n ')
 
@@ -152,12 +155,32 @@ H8=('\n Pentatonic Minor 1─b3─4─5─b7─8\n')
 Hout=(H1+H2+H3+H4+H5+H6+H7+H8)
 
 if istr in ['y','Y']:
-    f=open(fpath+"\\demofile2.txt","w",encoding='utf8')#open txt file for over writing
+    #f=open(fpath+"\\demofile2.txt","w",encoding='utf8')#open txt file for over writing
+    f=open("outputfile.txt","w",encoding='utf8')
     f.write(Hout+divider)
     f.close()
 else:
     print(Hout+divider)
     
+#print Bbmaj notes per string e,b,g,d,a,E
+F1=('\n\n Bb Maj scale notes:─ '+majscale(Notes_Bbmaj))
+F2=('\n Bb Maj Pentatonic scale notes:─ '+pent_majscale(Notes_Bbmaj))
+F3=('\n Bb Min Pentatonic scale notes:─ '+pent_minscale(Notes_Bbpmin))
+F4=('\n Bb  Chord notes:─'+chordnotes(Notes_Bbmaj)+'  3 chord─ '+trichord(Notes_Bbmaj))
+
+F5=('\n\n Bb Maj \n'+T+'\ne'+scale_notes(e,Notes_Bbmaj)+'\nb'+scale_notes(b,Notes_Bbmaj)+'\ng'+scale_notes(g,Notes_Bbmaj)+'\nd'+scale_notes(d,Notes_Bbmaj)+'\na'+scale_notes(a,Notes_Bbmaj)+'\nE'+scale_notes(E,Notes_Bbmaj))
+F6=('\n Bb Maj Pentatonic\n'+T+'\ne'+scale_notes(e,Notes_Bbpmaj)+'\nb'+scale_notes(b,Notes_Bbpmaj)+'\ng'+scale_notes(g,Notes_Bbpmaj)+'\nd'+scale_notes(d,Notes_Bbpmaj)+'\na'+scale_notes(a,Notes_Bbpmaj)+'\nE'+scale_notes(E,Notes_Bbpmaj))
+F7=('\n Bb Min Pentatonic\n'+T+'\ne'+scale_notes(e,Notes_Bbpmin)+'\nb'+scale_notes(b,Notes_Bbpmin)+'\ng'+scale_notes(g,Notes_Bbpmin)+'\nd'+scale_notes(d,Notes_Bbpmin)+'\na'+scale_notes(a,Notes_Bbpmin)+'\nE'+scale_notes(E,Notes_Bbpmin)+'\n')
+
+Bbout=(F1+F2+F3+F4+F5+F6+F7)
+
+if istr in ['y','Y']:
+    f=open("outputfile.txt","a",encoding="utf8")
+    f.write('\n\n'+' '*20+' Key Bb \n')
+    f.write(Bbout+divider)
+    f.close()
+else:
+    print(Bbout)
 
 #print Fmaj notes per string e,b,g,d,a,E
 F1=('\n\n F Maj scale notes:─ '+majscale(Notes_Fmaj))
@@ -172,7 +195,7 @@ F7=('\n F Min Pentatonic\n'+T+'\ne'+scale_notes(e,Notes_Fpmin)+'\nb'+scale_notes
 Fout=(F1+F2+F3+F4+F5+F6+F7)
 
 if istr in ['y','Y']:
-    f=open(fpath+"\\demofile2.txt","a",encoding='utf8')#open txt file for over writing
+    f=open("outputfile.txt","a",encoding="utf8")
     f.write('\n\n'+' '*20+' Key F \n')
     f.write(Fout+divider)
     f.close()
@@ -190,7 +213,8 @@ C7=('\n C Min Pentatonic\n'+T+'\ne'+scale_notes(e,Notes_Cpmin)+'\nb'+scale_notes
 Cout=(C1+C2+C3+C4+C5+C6+C7)
 
 if istr in ['y','Y']:
-    f=open(fpath+"\\demofile2.txt","a",encoding='utf8')#open txt file for over writing
+    #f=open(fpath+"\\demofile2.txt","a",encoding='utf8')#open txt file for over writing
+    f=open("outputfile.txt","a",encoding="utf8")
     f.write('\n\n'+' '*20+' Key C \n')
     f.write(Cout+divider)
     f.close()
@@ -209,7 +233,8 @@ Gout=(G1+G2+G3+G4+G5+G6+G7)
 
 
 if istr in ['y','Y']:
-    f=open(fpath+"\\demofile2.txt","a",encoding='utf8')#open txt file for over writing
+    #f=open(fpath+"\\demofile2.txt","a",encoding='utf8')#open txt file for over writing
+    f=open("outputfile.txt","a",encoding="utf8")
     f.write('\n\n'+' '*20+' Key G \n')
     f.write(Gout+divider)
     f.close()
@@ -229,7 +254,8 @@ D7=('\n D Min Pentatonic\n'+T+'\ne'+scale_notes(e,Notes_Dpmin)+'\nb'+scale_notes
 Dout=(D1+D2+D3+D4+D5+D6+D7)
 
 if istr in ['y','Y']:
-    f=open(fpath+"\\demofile2.txt","a",encoding='utf8')#open txt file for over writing
+    #f=open(fpath+"\\demofile2.txt","a",encoding='utf8')#open txt file for over writing
+    f=open("outputfile.txt","a",encoding="utf8")
     f.write('\n\n'+' '*20+' Key D \n')
     f.write(Dout+divider)
     f.close()
@@ -250,7 +276,8 @@ A7=('\n A Min Pentatonic\n'+T+'\ne'+scale_notes(e,Notes_Apmin)+'\nb'+scale_notes
 Aout=(A1+A2+A3+A4+A5+A6+A7)
 
 if istr in ['y','Y']:
-    f=open(fpath+"\\demofile2.txt","a",encoding='utf8')#open txt file for over writing
+    #f=open(fpath+"\\demofile2.txt","a",encoding='utf8')#open txt file for over writing
+    f=open("outputfile.txt","a",encoding="utf8")
     f.write('\n\n'+' '*20+' Key A \n')
     f.write(Aout+divider)
     f.close()
@@ -270,7 +297,8 @@ E7=('\n E Min Pentatonic\n'+T+'\ne'+scale_notes(e,Notes_Epmin)+'\nb'+scale_notes
 Eout=(E1+E2+E3+E4+E5+E6+E7)
 
 if istr in ['y','Y']:
-    f=open(fpath+"\\demofile2.txt","a",encoding='utf8')#open txt file for over writing
+    #f=open(fpath+"\\demofile2.txt","a",encoding='utf8')#open txt file for over writing
+    f=open("outputfile.txt","a",encoding="utf8")
     f.write('\n\n'+' '*20+' Key E \n')
     f.write(Eout+divider)
     f.close()
@@ -289,7 +317,8 @@ B7=('\n B Min Pentatonic\n'+T+'\ne'+scale_notes(e,Notes_Bpmin)+'\nb'+scale_notes
 Bout=(B1+B2+B3+B4+B5+B6+B7)
 
 if istr in ['y','Y']:
-    f=open(fpath+"\\demofile2.txt","a",encoding='utf8')#open txt file for over writing
+    #f=open(fpath+"\\demofile2.txt","a",encoding='utf8')#open txt file for over writing
+    f=open("outputfile.txt","a",encoding="utf8")
     f.write('\n\n'+' '*20+' Key B \n')
     f.write(Bout+divider)
     f.close()
